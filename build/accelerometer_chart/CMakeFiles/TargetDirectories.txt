@@ -312,6 +312,9 @@
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/timer/CMakeFiles/rebuild_cache.dir
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/timer/CMakeFiles/edit_cache.dir
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/timer/CMakeFiles/drivers__timer.dir
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/watchdog/CMakeFiles/edit_cache.dir
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/watchdog/CMakeFiles/rebuild_cache.dir
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/watchdog/CMakeFiles/drivers__watchdog.dir
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/modules/nrf/CMakeFiles/ncs_version_h.dir
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/modules/nrf/CMakeFiles/edit_cache.dir
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/modules/nrf/CMakeFiles/rebuild_cache.dir

@@ -157,3 +157,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/timer/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/zephyr/drivers/watchdog/cmake_install.cmake")
+endif()
+

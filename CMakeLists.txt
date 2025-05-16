@@ -30,3 +30,6 @@ target_sources(app PRIVATE
     src/images/shoesw1.c
     src/images/cardiogram.c
 )
+target_sources(app PRIVATE
+    src/watchdog.c
+)

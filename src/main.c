@@ -19,7 +19,7 @@
 #include "ble_hrs.h"
 #include "ble_nus.h"
 #include "ble_service.h"
-
+#include "watchdog.h"
 // ---------------------------------
 // Konstante i globalne promenljive
 // ---------------------------------
@@ -116,9 +116,9 @@ void main(void)
     lv_obj_clean(lv_scr_act());
 
     initialize_ui();
-    // watchface1();
-    watchface2();
-
+    watchface1();
+    // watchface2();
+    watchdog_init();
 
     uint32_t step_count = 0;
     uint32_t last_update = k_uptime_get_32();
