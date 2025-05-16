@@ -20,9 +20,11 @@
 #include "ble_nus.h"
 #include "ble_service.h"
 #include "watchdog.h"
+
 // ---------------------------------
 // Konstante i globalne promenljive
 // ---------------------------------
+
 #define BUFFER_SIZE 500
 
 static uint32_t ir_buffer[BUFFER_SIZE];
@@ -35,6 +37,7 @@ bool value_nrf_connect2 = false;
 // ------------------------------
 // Definisanje thread stack-ova
 // ------------------------------
+
 K_THREAD_STACK_DEFINE(max30101_thread_stack, 5000);
 K_THREAD_STACK_DEFINE(bmi160_thread_stack, 5000);
 K_THREAD_STACK_DEFINE(display_thread_stack, 4096);
