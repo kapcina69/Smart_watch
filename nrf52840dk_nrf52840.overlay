@@ -1,0 +1,136 @@
+/ {
+    compatible = "nordic,nrf52840-dk-nrf52840";
+
+    chosen {
+        /* Only one display can be chosen at a time */
+        // zephyr,display = &ssd1306;  // I2C OLED
+        zephyr,display = &ili9341;    // SPI TFT
+        zephyr,rtc = &rtc0;
+    };
+
+    aliases {
+        max30101 = &max30101;
+        bmi160 = &bmi160;
+    };
+
+    zephyr,user {
+        io-channels = <&adc 0>, <&adc 1>;
+    };
+};
+
+/* I2C0 Configuration (for BMI160, MAX30101, SSD1306) */
+&i2c0 {
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    /* BMI160 IMU */
+    bmi160: bmi160@69 {
+        compatible = "bosch,bmi160";
+        reg = <0x69>;
+        label = "BMI160";
+        int-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+    };
+
+    /* MAX30101 Pulse Oximeter */
+    max30101: max30101@57 {
+        compatible = "maxim,max30101";
+        reg = <0x57>;
+        label = "MAX30101";
+    };
+
+    /* SSD1306 OLED Display */
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        prechargep = <0x22>;
+        reset-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
+    };
+};
+
+/* SPI1 Configuration for ILI9341 */
+&spi1 {
+    status = "okay";
+    cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/ {
+    /* MIPI DBI/ILI9341 Configuration */
+    mipi_dbi {
+        compatible = "zephyr,mipi-dbi-spi";
+        dc-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;
+        write-only;
+        #address-cells = <1>;  // Only 1 address cell (typical for SPI devices)
+        #size-cells = <0>;     // No size needed (common for simple SPI devices)
+        spi-dev = <&spi1>;
+
+        ili9341: ili9341@0 {
+            compatible = "ilitek,ili9341";
+            reg = <0>;
+            mipi-max-frequency = <4000000>;
+            width = <240>;
+            height = <320>;
+            rotation = <180>;
+            pixel-format = <1>;
+        };
+    };
+};
+
+/* Pin Control Definitions */
+&pinctrl {
+    /* I2C0 Pins */
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
+            bias-pull-up;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
+            low-power-enable;
+        };
+    };
+
+    /* SPI1 Pins */
+    spi1_default: spi1_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 30)>;
+        };
+    };
+
+    spi1_sleep: spi1_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 30)>;
+            low-power-enable;
+        };
+    };
+};
+
+/* RTC Configuration */
+&rtc0 {
+    status = "okay";
+    compatible = "nordic,nrf-rtc";
+    clock-frequency = <32768>;
+};
+

@@ -1,0 +1,19 @@
+cmake:
+  application:
+    source-dir: /home/luka/ncs/v2.9.1/zephyr/share/sysbuild
+  board:
+    name: nrf52840dk
+    qualifiers: nrf52840
+    revision: 
+  kconfig:
+    files:
+     - /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/empty.conf
+     - /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/empty.conf
+    user-files:
+     - /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/empty.conf
+  sysbuild: true
+version: 0.1.0
+west:
+  command: /home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/west build -b nrf52840dk_nrf52840 --pristine
+  topdir: /home/luka/ncs/v2.9.1
+  version: 1.2.0

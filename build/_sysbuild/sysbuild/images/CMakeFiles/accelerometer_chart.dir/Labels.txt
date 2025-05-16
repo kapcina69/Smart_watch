@@ -1,0 +1,13 @@
+# Target labels
+ accelerometer_chart
+# Source files and their labels
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/CMakeFiles/accelerometer_chart
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/CMakeFiles/accelerometer_chart.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/CMakeFiles/accelerometer_chart-complete.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-build.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-configure.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-download.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-install.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-mkdir.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-patch.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/_sysbuild/sysbuild/images/accelerometer_chart-prefix/src/accelerometer_chart-stamp/accelerometer_chart-update.rule
