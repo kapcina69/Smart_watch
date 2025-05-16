@@ -17,11 +17,11 @@
 /home/luka/ncs/v2.9.1/zephyr/boards/Kconfig.v2
 /home/luka/ncs/v2.9.1/zephyr/boards/nordic/nrf52840dk/Kconfig.nrf52840dk
 /home/luka/ncs/v2.9.1/zephyr/modules/Kconfig.sysbuild
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/Kconfig/Kconfig.sysbuild.modules
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/Kconfig/boards/Kconfig.nrf52840dk
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/Kconfig/boards/Kconfig.sysbuild
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/Kconfig/soc/Kconfig.soc
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/Kconfig/soc/Kconfig.sysbuild
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Kconfig/Kconfig.sysbuild.modules
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Kconfig/boards/Kconfig.nrf52840dk
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Kconfig/boards/Kconfig.sysbuild
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Kconfig/soc/Kconfig.soc
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Kconfig/soc/Kconfig.sysbuild
 /home/luka/ncs/v2.9.1/zephyr/share/sysbuild/Kconfig
 /home/luka/ncs/v2.9.1/zephyr/share/sysbuild/Kconfig.v2
 /home/luka/ncs/v2.9.1/zephyr/share/sysbuild/build/Kconfig

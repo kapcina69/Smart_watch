@@ -1,0 +1,13 @@
+# Target labels
+ Smartwatch
+# Source files and their labels
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/CMakeFiles/Smartwatch
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/CMakeFiles/Smartwatch.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/CMakeFiles/Smartwatch-complete.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-build.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-configure.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-download.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-install.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-mkdir.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-patch.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/Smartwatch-prefix/src/Smartwatch-stamp/Smartwatch-update.rule

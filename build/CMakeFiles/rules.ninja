@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/cmake --regenerate-during-build -S/home/luka/ncs/v2.9.1/zephyr/share/sysbuild -B/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build
+  command = /home/luka/ncs/toolchains/7cbc0036f4/usr/local/bin/cmake --regenerate-during-build -S/home/luka/ncs/v2.9.1/zephyr/share/sysbuild -B/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build
   description = Re-running CMake...
   generator = 1
 
@@ -32,7 +32,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/ninja $FILE_ARG -t clean $TARGETS
+  command = /home/luka/ncs/toolchains/7cbc0036f4/usr/local/bin/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -40,6 +40,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/ninja -t targets
+  command = /home/luka/ncs/toolchains/7cbc0036f4/usr/local/bin/ninja -t targets
   description = All primary targets available:
 
