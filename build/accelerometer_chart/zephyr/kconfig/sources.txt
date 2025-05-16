@@ -375,6 +375,7 @@
 /home/luka/ncs/v2.9.1/nrfxlib/nrf_rpc/Kconfig
 /home/luka/ncs/v2.9.1/nrfxlib/openthread/Kconfig
 /home/luka/ncs/v2.9.1/nrfxlib/zboss/Kconfig
+/home/luka/ncs/v2.9.1/zephyr/Kconfig
 /home/luka/ncs/v2.9.1/zephyr/Kconfig.constants
 /home/luka/ncs/v2.9.1/zephyr/Kconfig.zephyr
 /home/luka/ncs/v2.9.1/zephyr/arch/Kconfig
@@ -2010,7 +2011,6 @@
 /home/luka/ncs/v2.9.1/zephyr/modules/trusted-firmware-m/Kconfig.tfm.partitions
 /home/luka/ncs/v2.9.1/zephyr/modules/uoscore-uedhoc/Kconfig
 /home/luka/ncs/v2.9.1/zephyr/modules/zcbor/Kconfig
-/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/Kconfig
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/Kconfig/Kconfig.dts
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/Kconfig/Kconfig.modules
 /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/accelerometer_chart/build/accelerometer_chart/Kconfig/Kconfig.shield
