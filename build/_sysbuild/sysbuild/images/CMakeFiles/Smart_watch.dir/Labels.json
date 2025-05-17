@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-build.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-download.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-install.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Smart_watch"
+		],
+		"name" : "Smart_watch"
+	}
+}

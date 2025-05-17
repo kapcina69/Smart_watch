@@ -1,8 +1,8 @@
-# Install script for directory: /home/luka/ncs/v2.9.1/zephyr/share/sysbuild/template
+# Install script for directory: C:/ncs/v2.9.1/zephyr/share/sysbuild/template
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/sysbuild_toplevel")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -39,6 +34,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/cmake_install.cmake")
+  include("C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/cmake_install.cmake")
 endif()
 

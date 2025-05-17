@@ -1,5 +1,6 @@
 west:
-  command: /home/luka/ncs/toolchains/7cbc0036f4/usr/local/bin/west build -b nrf52840dk_nrf52840
-    --pristine
-  topdir: /home/luka/ncs/v2.9.1
+  command: C:\ncs\toolchains\b620d30767\opt\bin\Scripts\west build --build-dir c:/Users/Luka/Desktop/Projekat/Smart_watch/build
+    c:/Users/Luka/Desktop/Projekat/Smart_watch --pristine --board nrf52840dk/nrf52840
+    -- -DNCS_TOOLCHAIN_VERSION=NONE -DCONF_FILE=prj.conf -DDTC_OVERLAY_FILE=nrf52840dk_nrf52840.overlay
+  topdir: c:\ncs\v2.9.1
   version: 1.2.0

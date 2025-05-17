@@ -3,7 +3,7 @@
 
 #include <lvgl.h>
 
-// Extern LVGL objekti
+// Extern LVGL objects
 extern lv_obj_t *battery_label;
 extern lv_obj_t *heart_label;
 extern lv_obj_t *steps_label;
@@ -17,11 +17,73 @@ extern lv_obj_t *bt_label;
 extern lv_obj_t *steps_img;
 extern lv_obj_t *heart_img;
 
-// Funkcije
+
+
+/** @brief Initializes the UI components.
+ *
+ * This function creates and configures the UI components for the display.
+ * It sets up images, labels, and their properties.
+ */
 void initialize_ui(void);
+
+
+
+/**
+ * @brief Hides all UI views.
+ *
+ * This function sets the visibility of all UI components to hidden.
+ * It is used to clear the display before showing a new view.
+ */
 void hide_all_views(void);
+
+
+/**
+ * @brief Displays the main watch face.
+ * 
+ * This function sets up the main watch face with the background image,
+ * heart rate label, steps label, and other UI elements.
+ */
 void watchface1(void);
+
+
+/**
+ * @brief Displays the watch face with other features.
+ * 
+ * This function sets up the watch face with a different background image
+ * and shows the steps label and shoes image.
+ * It is used for a specific watch face view.
+ */
 void watchface2(void);
+
+/**
+ * @brief Updates the LCD display with heart rate and steps.
+ * 
+ * This function updates the heart rate and steps labels on the LCD display.
+ * It sets the text for the heart rate and steps labels and aligns them on the screen.
+ * 
+ * @param heart_rate The current heart rate value.
+ * @param steps The current step count.
+ * 
+ */
 void update_lcd_display(uint32_t heart_rate, uint32_t steps);
+
+/**
+ * @brief Set HR on watchface1
+ * 
+ * This function sets up the watch face with heart rate and cardiogram images.
+ * It is used for a specific watch face view.
+ */
+void watchfacehr(void); 
+
+
+/**
+ * @brief Set steps on watchface1
+ * 
+ * This function sets up the watch face with steps and shoes images.
+ * It is used for a specific watch face view.
+ */
+void watchfacesteps(void); 
+
+
 
 #endif // UI_H

@@ -1,0 +1,13 @@
+# Target labels
+ Smart_watch
+# Source files and their labels
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/CMakeFiles/Smart_watch-complete.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-build.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-configure.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-download.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-install.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-mkdir.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-patch.rule
+C:/Users/Luka/Desktop/Projekat/Smart_watch/build/_sysbuild/sysbuild/images/Smart_watch-prefix/src/Smart_watch-stamp/Smart_watch-update.rule

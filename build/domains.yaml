@@ -1,7 +1,7 @@
-default: Smartwatch
-build_dir: /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build
+default: Smart_watch
+build_dir: C:/Users/Luka/Desktop/Projekat/Smart_watch/build
 domains:
-  - name: Smartwatch
-    build_dir: /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch
+  - name: Smart_watch
+    build_dir: C:/Users/Luka/Desktop/Projekat/Smart_watch/build/Smart_watch
 flash_order:
-  - Smartwatch
+  - Smart_watch

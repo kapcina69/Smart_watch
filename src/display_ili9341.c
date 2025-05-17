@@ -113,7 +113,7 @@ void initialize_ui(void)
     lv_obj_add_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
 }
 
-void hide_all_views(void)
+void hide_all_views(void) // Hide all views
 {
     lv_obj_add_flag(image, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(image1, LV_OBJ_FLAG_HIDDEN);
@@ -130,7 +130,7 @@ void hide_all_views(void)
 
 }
 
-void watchface1(void)
+void watchface1(void) // Main watchface
 {
     k_msleep(2000);
     hide_all_views();
@@ -158,7 +158,7 @@ void watchface1(void)
     lv_obj_clear_flag(bt_label, LV_OBJ_FLAG_HIDDEN);
 }
 
-void watchfacesteps(void)
+void watchfacesteps(void) // Just steps on watchface1
 {
     k_msleep(2000);
     hide_all_views();
@@ -174,7 +174,7 @@ void watchfacesteps(void)
 }
 
 
-void watchfacehr(void)
+void watchfacehr(void) // Just heart rate on watchface1
 {
     k_msleep(2000);
     hide_all_views();
