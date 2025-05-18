@@ -66,7 +66,7 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 ## 🖼️ Screenshots  
 
 ![LVGL Interface Preview](https://user-images.githubusercontent.com/your_screenshot_placeholder)  
-*(Example: Live heart rate and step counter display)*  
+ *(Example: Live heart rate and step counter display)*  
 
 ---
 
@@ -112,5 +112,3 @@ PRs welcome! For major changes, open an issue first.
 3. **Future Plans**: Moved to a dedicated section for better visibility.  
 4. **Build Instructions**: Added quick-start commands.  
 5. **Consistent Formatting**: Emojis for visual cues, bullet points for readability.  
-
-
