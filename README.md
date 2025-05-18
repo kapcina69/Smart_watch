@@ -14,7 +14,7 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
   - Step counting using **BMI160** 6-axis motion sensor  
 
 - **🖥️ Interactive GUI**  
-  - Real-time display on **0.91" OLED (SSD1306, 128×32)**  
+  - Real-time display on **RGB TFT LCD (GC9A01, 240×240)**  
   - Built with **LVGL** for smooth animations and widgets  
 
 - **📶 Wireless Connectivity**  
@@ -130,7 +130,7 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
   - Step counting using **BMI160** 6-axis motion sensor  
 
 - **🖥️ Interactive GUI**  
-  - Real-time display on **0.91" OLED (SSD1306, 128×32)**  
+  - Real-time display on **RGB TFT LCD (GC9A01, 240×240)**  
   - Built with **LVGL** for smooth animations and widgets  
 
 - **📶 Wireless Connectivity**  
