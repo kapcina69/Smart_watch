@@ -247,7 +247,25 @@
 			interrupts = < 0x7 0x1 >;
 			status = "okay";
 			#io-channel-cells = < 0x1 >;
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
 			phandle = < 0x1c >;
+			channel@0 {
+				reg = < 0x0 >;
+				zephyr,gain = "ADC_GAIN_1_6";
+				zephyr,reference = "ADC_REF_INTERNAL";
+				zephyr,acquisition-time = < 0x0 >;
+				zephyr,input-positive = < 0x2 >;
+				zephyr,resolution = < 0xc >;
+			};
+			channel@1 {
+				reg = < 0x1 >;
+				zephyr,gain = "ADC_GAIN_1_6";
+				zephyr,reference = "ADC_REF_INTERNAL";
+				zephyr,acquisition-time = < 0x0 >;
+				zephyr,input-positive = < 0x8 >;
+				zephyr,resolution = < 0xc >;
+			};
 		};
 		timer0: timer@40008000 {
 			compatible = "nordic,nrf-timer";
@@ -696,13 +714,13 @@
 		spi1_default: spi1_default {
 			phandle = < 0xb >;
 			group1 {
-				psels = < 0x400001f >, < 0x500001e >;
+				psels = < 0x400000e >, < 0x5000010 >;
 			};
 		};
 		spi1_sleep: spi1_sleep {
 			phandle = < 0xc >;
 			group1 {
-				psels = < 0x400001f >, < 0x500001e >;
+				psels = < 0x400000e >, < 0x5000010 >;
 				low-power-enable;
 			};
 		};

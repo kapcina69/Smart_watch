@@ -1357,15 +1357,15 @@ zephyr_udc0: &usbd {
 
     spi1_default: spi1_default {
         group1 {
-            psels = <((((((0) * 32U) + (31)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
-                    <((((((0) * 32U) + (30)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
+            psels = <((((((0) * 32U) + (14)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
+                    <((((((0) * 32U) + (16)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
         };
     };
 
     spi1_sleep: spi1_sleep {
         group1 {
-            psels = <((((((0) * 32U) + (31)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
-                    <((((((0) * 32U) + (30)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
+            psels = <((((((0) * 32U) + (14)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
+                    <((((((0) * 32U) + (16)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
             low-power-enable;
         };
     };
@@ -1376,6 +1376,29 @@ zephyr_udc0: &usbd {
     status = "okay";
     compatible = "nordic,nrf-rtc";
     clock-frequency = <32768>;
+};
+
+&adc {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <0>;
+        zephyr,input-positive = <2>;
+        zephyr,resolution = <12>;
+    };
+
+    channel@1 {
+        reg = <1>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <0>;
+        zephyr,input-positive = <8>;
+        zephyr,resolution = <12>;
+    };
 };
 # 0 "<command-line>" 2
 # 1 "/home/luka/ncs/v2.9.1/zephyr/misc/empty_file.c"

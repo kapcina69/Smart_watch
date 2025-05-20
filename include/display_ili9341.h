@@ -24,5 +24,6 @@ void hide_all_views(void);
 void watchface1(void);
 void watchface2(void);
 void update_lcd_display(uint32_t heart_rate, uint32_t steps);
+void show_battery_status(int percentage);
 
 #endif // UI_H

@@ -23,6 +23,7 @@
 #include "ble_nus.h"
 #include "ble_service.h"
 #include "watchdog.h"
+#include "battery_monitor.h"
 
 // ---------------------------------
 // Constants and global variables
@@ -136,6 +137,9 @@ void main(void)
     // Initialize watchdog timer
     watchdog_init();
 
+    //Initialize battery monitor
+    battery_monitor_init();
+
     // Variables for local use (not used in the shown code)
     uint32_t step_count = 0;
     uint32_t last_update = k_uptime_get_32();
@@ -170,6 +174,9 @@ void main(void)
         struct display_data display_data = {0};
         struct bluetooth_data bt_data = {0};
 
+
+        battery_monitor_process();
+        
         // Check if Bluetooth command received
         if(value_nrf_connect) {
             if(received_data_from_bluetooth > 0){
