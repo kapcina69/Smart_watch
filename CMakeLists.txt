@@ -21,7 +21,7 @@ target_sources(app PRIVATE
     src/sensors/max30101.c
 )
 target_sources(app PRIVATE
-    src/images/background.c
+    # src/images/background.c
     src/images/heart.c
     src/images/background1.c
     src/images/steps_img.c
@@ -29,6 +29,7 @@ target_sources(app PRIVATE
     src/images/watchface1bg.c
     src/images/shoesw1.c
     src/images/cardiogram.c
+    src/images/bluetooth1.c
 )
 target_sources(app PRIVATE
     src/watchdog.c

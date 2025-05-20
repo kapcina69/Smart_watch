@@ -13,6 +13,7 @@ extern lv_obj_t *battery_percent_label;
 extern lv_obj_t *image;
 extern lv_obj_t *image1;
 extern lv_obj_t *bluetooth_img;
+extern lv_obj_t *bluetooth_img1;
 extern lv_obj_t *bt_label;
 extern lv_obj_t *steps_img;
 extern lv_obj_t *heart_img;
