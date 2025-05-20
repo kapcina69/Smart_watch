@@ -32,7 +32,7 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 | Component         | Protocol/Interface  | Details                      |  
 |-------------------|---------------------|------------------------------|  
 | **MCU**           | nRF52840 DK         | ARM Cortex-M4F, BLE 5.0      |  
-| **Display**       | I²C (SSD1306)       | 0.91" OLED, 128×32 pixels    |  
+| **Display**       | I²C (GC9A01)        | TFT LCD Round RGB 240 * 240  |  
 | **Motion Sensor** | I²C (BMI160/LSM6DSO)| 6-axis accelerometer + gyro  |  
 | **Pulse Sensor**  | I²C (MAX30102)      | Heart rate + SpO² (future)   |  
 | **Power**         | USB / Battery       | 3.7V **LiPo 402025** via DK headers |  
@@ -65,7 +65,8 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 
 ## 🖼️ Screenshots  
 
-![LVGL Interface Preview](https://user-images.githubusercontent.com/your_screenshot_placeholder)  
+(![Preview](./images/background1.png)
+)  
  *(Example: Live heart rate and step counter display)*  
 
 ---
