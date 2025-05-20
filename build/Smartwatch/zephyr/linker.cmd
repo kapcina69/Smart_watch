@@ -2,7 +2,7 @@
 _region_min_align = 32;
 MEMORY
     {
-    FLASH (rx) : ORIGIN = 0x0, LENGTH = 0x100000
+    FLASH (rx) : ORIGIN = 0xc200, LENGTH = 0x79e00
     RAM (wx) : ORIGIN = 0x20000000, LENGTH = 0x40000
    
     IDT_LIST (wx) : ORIGIN = 0xFFFF7FFF, LENGTH = 32K
@@ -41,7 +41,7 @@ SECTIONS
  *(.iplt)
  }
    
- __rom_region_start = 0x0;
+ __rom_region_start = 0xc200;
     rom_start :
  {
 HIDDEN(__rom_start_address = .);
@@ -143,6 +143,7 @@ ztest :
   KEEP(*(".dbg_thread_info"));
  } > FLASH
  intc_table_area : SUBALIGN(4) { _intc_table_list_start = .; KEEP(*(SORT_BY_NAME(._intc_table.static.*))); _intc_table_list_end = .; } > FLASH
+ mcumgr_handler_area : SUBALIGN(4) { _mcumgr_handler_list_start = .; KEEP(*(SORT_BY_NAME(._mcumgr_handler.static.*))); _mcumgr_handler_list_end = .; } > FLASH
  input_callback_area : SUBALIGN(4) { _input_callback_list_start = .; KEEP(*(SORT_BY_NAME(._input_callback.static.*))); _input_callback_list_end = .; } > FLASH
  emul_area : SUBALIGN(4) { _emul_list_start = .; KEEP(*(SORT_BY_NAME(._emul.static.*))); _emul_list_end = .; } > FLASH
  symbol_to_keep : ALIGN_WITH_INPUT

@@ -37,3 +37,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/home/luka/ncs/toolchains/b77d8c1312/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/subsys/mgmt/mcumgr/cmake_install.cmake")
+endif()
+
