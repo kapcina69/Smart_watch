@@ -113,15 +113,15 @@
     /* SPI1 Pins */
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 30)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 14)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 16)>;
         };
     };
 
     spi1_sleep: spi1_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 30)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 14)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 16)>;
             low-power-enable;
         };
     };
@@ -134,3 +134,25 @@
     clock-frequency = <32768>;
 };
 
+&adc {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <NRF_SAADC_AIN1>; /* P0.03 */
+        zephyr,resolution = <12>;
+    };
+
+    channel@1 {
+        reg = <1>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <NRF_SAADC_AIN7>; /* P0.31 */
+        zephyr,resolution = <12>;
+    };
+};
