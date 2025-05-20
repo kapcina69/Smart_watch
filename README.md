@@ -65,7 +65,7 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 
 ## 🖼️ Screenshots  
 
-(![Preview](./images/background1.png)
+(![Preview](./images/watchface1.png)
 )  
  *(Example: Live heart rate and step counter display)*  
 
