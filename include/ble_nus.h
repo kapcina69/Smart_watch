@@ -10,17 +10,43 @@
 extern "C" {
 #endif
 
-/* Callback for when Bluetooth is initialized */
+/**
+ * @brief Callback function to handle Bluetooth events.
+ * 
+ * @param err 
+ */
 void bt_ready(int err);
 
-/* Connection callback functions */
+/**
+ * @brief Callback function for connection events.
+ * 
+ * @param conn 
+ * @param err 
+ */
 void connected(struct bt_conn *conn, uint8_t err);
+
+/**
+ * @brief Callback function for disconnection events.
+ * 
+ * @param conn 
+ * @param reason 
+ */
 void disconnected(struct bt_conn *conn, uint8_t reason);
 
-/* Initialize BLE NUS service */
+/**
+ * @brief Initializes the Bluetooth Low Energy (BLE) NUS service.
+ * 
+ * @return int 
+ */
 int ble_nus_init(void);
 
-/* Send heart rate and steps data over BLE */
+/**
+ * @brief Sends heart rate and step data over BLE.
+ * 
+ * @param heart_rate 
+ * @param steps 
+ * @return int 
+ */
 int ble_nus_send_data(int heart_rate, uint32_t steps);
 
 #ifdef __cplusplus

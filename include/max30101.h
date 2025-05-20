@@ -33,8 +33,44 @@ enum {
 #define BUFFER_SIZE 500
 
 // Function prototypes
+
+
+/**
+ * @brief Initializes the MAX30101 sensor.
+ * 
+ * This function configures the MAX30101 sensor for operation.
+ * It sets the mode, sample rate, LED current, and other parameters.
+ * 
+ * @param i2c_dev 
+ * @return int 
+ */
 int max30101_init(const struct device *i2c_dev);
+
+
+
+/**
+ * @brief Reads a sample from the MAX30101 sensor.
+ * 
+ * This function reads a sample from the MAX30101 sensor and stores it in the provided buffer.
+ * It also handles the FIFO buffer and ensures that the data is valid.
+ * 
+ * @param ir 
+ * @return int 
+ */
 int max30101_read_ir_sample(uint32_t *ir);
+
+
+
+/**
+ * @brief Counts the number of peaks in the provided samples.
+ * 
+ * This function analyzes the provided samples and counts the number of peaks.
+ * It uses a simple thresholding algorithm to identify peaks.
+ * 
+ * @param samples 
+ * @param count 
+ * @return int 
+ */
 int count_peaks(uint32_t *samples, int count);
 
 #endif // MAX30101_H
