@@ -89,7 +89,6 @@ west flash
 ## 🧠 Future Roadmap  
 
 - [ ] **SpO² Estimation** (MAX30102)  
-- [ ] **Battery Monitoring**  
 - [ ] **Data Logging** (Flash storage)  
 - [ ] **Enhanced UI** (Graphs, history view)  
 - [ ] **Secure BLE Pairing**  
