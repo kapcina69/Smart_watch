@@ -1,24 +1,25 @@
-/*******************************************************************************
- * Size: 20 px
- * Bpp: 1
- * Opts: --bpp 1 --size 20 --lcd --use-color-info --font YouthTouchDemoRegular-4VwY.ttf --symbols 01234567489 --format lvgl -o font2.c
- ******************************************************************************/
 
- #ifdef __has_include
- #if __has_include("lvgl.h")
-     #ifndef LV_LVGL_H_INCLUDE_SIMPLE
-         #define LV_LVGL_H_INCLUDE_SIMPLE
-     #endif
- #endif
+
+#ifdef __has_include
+#if __has_include("lvgl.h")
+    #ifndef LV_LVGL_H_INCLUDE_SIMPLE
+        #define LV_LVGL_H_INCLUDE_SIMPLE
+    #endif
+#endif
 #endif
 
 #if defined(LV_LVGL_H_INCLUDE_SIMPLE)
- #include "lvgl.h"
+#include "lvgl.h"
 #else
- #include "lvgl/lvgl.h"
+#include "lvgl/lvgl.h"
 #endif
- 
- #if font2
+
+
+#ifndef FONT2
+#define FONT2 1
+#endif
+
+#if FONT2
  
  /*-----------------
   *    BITMAPS
@@ -257,7 +258,7 @@
   *  ALL CUSTOM DATA
   *--------------------*/
  
- #if LVGL_VERSION_MAJOR == 8 //#if LV_VERSION_CHECK(8, 0, 0)
+ #if LV_VERSION_CHECK(8, 0, 0)
  /*Store all the custom data of the font*/
  static  lv_font_fmt_txt_glyph_cache_t cache;
  #endif
@@ -288,7 +289,7 @@
   *----------------*/
  
  /*Initialize a public general font descriptor*/
- #if LVGL_VERSION_MAJOR >= 8 //#if LV_VERSION_CHECK(8, 0, 0)
+ #if LV_VERSION_CHECK(8, 0, 0)
  const lv_font_t font2 = {
  #else
  lv_font_t font2 = {

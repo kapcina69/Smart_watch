@@ -218,7 +218,7 @@ void main(void)
         }
 
         // Update time and UI
-        rtc_update_time_label(my_time_label, my_date_label);
+        rtc_update_time_label(my_time_label, my_date_label, short_time_label);
         lv_task_handler(); // Update GUI
         k_msleep(1000);    // Sleep for 1 second
     }

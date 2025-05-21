@@ -3,7 +3,6 @@
 
     chosen {
         /* Only one display can be chosen at a time */
-        // zephyr,display = &ssd1306;  // I2C OLED
         zephyr,display = &ili9341;    // SPI TFT
         zephyr,rtc = &rtc0;
     };
@@ -41,22 +40,7 @@
         label = "MAX30101";
     };
 
-    /* SSD1306 OLED Display */
-    ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        label = "SSD1306";
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        prechargep = <0x22>;
-        reset-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
-    };
+
 };
 
 /* SPI1 Configuration for ILI9341 */

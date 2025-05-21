@@ -1247,7 +1247,6 @@ zephyr_udc0: &usbd {
 
     chosen {
 
-
         zephyr,display = &ili9341;
         zephyr,rtc = &rtc0;
     };
@@ -1286,21 +1285,6 @@ zephyr_udc0: &usbd {
     };
 
 
-    ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        label = "SSD1306";
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        prechargep = <0x22>;
-        reset-gpios = <&gpio0 22 (1 << 0)>;
-    };
 };
 
 

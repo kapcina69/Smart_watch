@@ -68,7 +68,7 @@ void rtc_set_initial_time(const char *data)
 
 
 
-void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label)
+void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label,lv_obj_t *short_time_label)
 {
     struct timespec ts;
     if (clock_gettime(CLOCK_REALTIME, &ts) < 0) {
@@ -92,10 +92,14 @@ void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label)
     };
 
     char time_buf[16];
+    char short_time_buf[16];
     char date_buf[32];
 
     snprintf(time_buf, sizeof(time_buf), "%02d:%02d:%02d",
              timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec);
+    snprintf(short_time_buf, sizeof(short_time_buf), "%02d:%02d",
+                timeinfo->tm_hour, timeinfo->tm_min);
+    lv_label_set_text(short_time_label, short_time_buf);
     if(time_buf[0] == '0' && time_buf[1] == '0' && time_buf[3] == '0' && time_buf[4] == '0' && time_buf[6] == '0' && time_buf[7] == '0') {
         bmi160_reset_step_counter();
     }

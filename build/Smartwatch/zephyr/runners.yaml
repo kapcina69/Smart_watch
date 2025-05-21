@@ -18,7 +18,7 @@ config:
   # Build outputs:
   elf_file: zephyr.elf
   hex_file: /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/merged.hex
-  bin_file: /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/zephyr.signed.bin
+  bin_file: zephyr.bin
   # Host tools:
   gdb: /home/luka/ncs/toolchains/b77d8c1312/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb
   openocd: /usr/bin/openocd

@@ -16,6 +16,7 @@
 #include "shoesw1.h"
 #include "cardiogram.h"
 #include "bluetooth1.h"
+#include "font2.h"
 
 // Definicije LVGL objekata
 lv_obj_t *battery_label;
@@ -26,6 +27,7 @@ lv_obj_t *battery_label_empty;
 lv_obj_t *heart_label;
 lv_obj_t *steps_label;
 lv_obj_t *my_time_label;
+lv_obj_t *short_time_label;
 lv_obj_t *my_date_label;
 lv_obj_t *battery_percent_label = NULL;
 lv_obj_t *image;
@@ -110,6 +112,11 @@ void initialize_ui(void)
     my_time_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(my_time_label, lv_color_hex(0xF4F0EC), LV_PART_MAIN);
     lv_obj_set_style_text_font(my_time_label, &ui_font_aliean_25, LV_PART_MAIN);
+
+    short_time_label = lv_label_create(lv_scr_act());
+    lv_obj_set_style_text_color(short_time_label, lv_color_white(), LV_PART_MAIN);
+    lv_obj_set_style_text_font(short_time_label, &lv_font_montserrat_16, LV_PART_MAIN);
+    lv_obj_align(short_time_label, LV_ALIGN_CENTER, 0,-90);
 
     my_date_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(my_date_label, lv_color_white(), LV_PART_MAIN);
@@ -218,6 +225,7 @@ void hide_all_views(void)
     lv_obj_add_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(shoesw1_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(cardiogram_img, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
 
 }
 
@@ -232,12 +240,15 @@ void watchface1(void)
     lv_obj_clear_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(steps_label, LV_ALIGN_CENTER, -45, 80);
     lv_obj_set_style_text_font(steps_label, &lv_font_montserrat_16, LV_PART_MAIN);
+    lv_obj_set_style_text_font(heart_label, &lv_font_montserrat_16, LV_PART_MAIN);
+
 
     lv_obj_clear_flag(heart_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(heart_label, LV_ALIGN_CENTER, 42, 80);
 
     lv_obj_clear_flag(my_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(my_time_label, LV_ALIGN_CENTER, 0, -40);
+    lv_obj_set_style_text_font(my_time_label, &ui_font_aliean_25, LV_PART_MAIN);
 
     lv_obj_clear_flag(my_date_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(my_date_label, LV_ALIGN_CENTER, 0, -20);
@@ -247,7 +258,7 @@ void watchface1(void)
     lv_obj_align(battery_label2, LV_ALIGN_CENTER, 80, -90);
     lv_obj_align(battery_label3, LV_ALIGN_CENTER, 80, -90);
     lv_obj_align(battery_label_empty, LV_ALIGN_CENTER, 80, -90);
-    lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -50, 0);
+    lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -52, 0);
 
 
 }
@@ -258,6 +269,7 @@ void watchfacesteps(void)
     hide_all_views();
     k_msleep(100);
 
+    lv_obj_clear_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(wachface1bg_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(steps_label, LV_ALIGN_CENTER, 0, 40);
@@ -274,6 +286,9 @@ void watchfacehr(void)
     hide_all_views();
     k_msleep(100);
 
+
+
+    lv_obj_clear_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(wachface1bg_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(heart_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(heart_label, LV_ALIGN_CENTER, 0, 40);

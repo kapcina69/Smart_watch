@@ -30,7 +30,8 @@ void rtc_set_initial_time(const char *data);
  * 
  * @param time_label 
  * @param date_label 
+ * @param short_time_label
  */
-void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label);
+void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label, lv_obj_t *short_time_label);
 
 #endif /* RTC_DRIVER_H */

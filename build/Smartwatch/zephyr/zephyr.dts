@@ -170,21 +170,6 @@
 				reg = < 0x57 >;
 				label = "MAX30101";
 			};
-			ssd1306: ssd1306@3c {
-				compatible = "solomon,ssd1306fb";
-				reg = < 0x3c >;
-				label = "SSD1306";
-				width = < 0x80 >;
-				height = < 0x40 >;
-				segment-offset = < 0x0 >;
-				page-offset = < 0x0 >;
-				display-offset = < 0x0 >;
-				multiplex-ratio = < 0x3f >;
-				segment-remap;
-				com-invdir;
-				prechargep = < 0x22 >;
-				reset-gpios = < &gpio0 0x16 0x1 >;
-			};
 		};
 		spi0: spi@40003000 {
 			compatible = "nordic,nrf-spi";

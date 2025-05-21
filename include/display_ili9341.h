@@ -17,6 +17,7 @@ extern lv_obj_t *bluetooth_img1;
 extern lv_obj_t *bt_label;
 extern lv_obj_t *steps_img;
 extern lv_obj_t *heart_img;
+extern lv_obj_t *short_time_label;
 
 
 /** @brief Initializes the UI components.
