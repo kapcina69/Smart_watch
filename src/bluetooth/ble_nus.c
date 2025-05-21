@@ -36,6 +36,7 @@ void connected(struct bt_conn *conn, uint8_t err)
     if (err == 0) {
         printk("Connected\n");
         lv_obj_clear_flag(bluetooth_img1, LV_OBJ_FLAG_HIDDEN);  // Prikazi BT simbol
+        // lv_obj_clear_flag(bt_label, LV_OBJ_FLAG_HIDDEN);  // Prikazi BT simbol
     } else {
         printk("Connection failed (err %u)\n", err);
     }
