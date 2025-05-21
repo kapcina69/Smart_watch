@@ -22,6 +22,7 @@ lv_obj_t *battery_label;
 lv_obj_t *battery_label1;
 lv_obj_t *battery_label2;
 lv_obj_t *battery_label3;
+lv_obj_t *battery_label_empty;
 lv_obj_t *heart_label;
 lv_obj_t *steps_label;
 lv_obj_t *my_time_label;
@@ -37,6 +38,8 @@ lv_obj_t *steps_img = NULL;
 lv_obj_t *heart_img = NULL;
 lv_obj_t *shoesw1_img = NULL;
 lv_obj_t *cardiogram_img = NULL;
+lv_obj_t *charging_img;
+lv_obj_t *charging_img1;
 
 void initialize_ui(void)
 {
@@ -94,6 +97,11 @@ void initialize_ui(void)
     lv_obj_set_style_text_color(battery_label3, lv_color_white(), LV_PART_MAIN);
     lv_obj_set_style_text_font(battery_label3, &lv_font_montserrat_16, LV_PART_MAIN);
 
+    battery_label_empty = lv_label_create(lv_scr_act());
+    lv_label_set_text(battery_label_empty, LV_SYMBOL_BATTERY_EMPTY);
+    lv_obj_set_style_text_color(battery_label_empty, lv_color_white(), LV_PART_MAIN);
+    lv_obj_set_style_text_font(battery_label_empty, &lv_font_montserrat_16, LV_PART_MAIN);
+
     battery_percent_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(battery_percent_label, lv_color_white(), LV_PART_MAIN);
     lv_obj_set_style_text_font(battery_percent_label, &lv_font_montserrat_14, LV_PART_MAIN);
@@ -138,30 +146,59 @@ void initialize_ui(void)
     lv_obj_set_style_text_font(steps_label, &lv_font_montserrat_16, LV_PART_MAIN);
     lv_label_set_text(steps_label, "0");
     lv_obj_add_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
+
+    charging_img1 = lv_label_create(lv_scr_act());
+    lv_label_set_text(charging_img1, LV_SYMBOL_CHARGE);
+    lv_obj_set_style_text_color(charging_img1, lv_color_white(), LV_PART_MAIN);
+    lv_obj_set_style_text_font(charging_img1, &lv_font_montserrat_16, LV_PART_MAIN);
+    lv_obj_align(charging_img1, LV_ALIGN_CENTER, 80, -90);
+    lv_obj_add_flag(charging_img1, LV_OBJ_FLAG_HIDDEN);
+
+
+
 }
 
-void show_battery_status(int percentage)
+void show_battery_status(int percentage, bool is_charging)
+
 {
-    if (percentage >= 75) {
+    if (is_charging) {
+        lv_obj_clear_flag(charging_img1, LV_OBJ_FLAG_HIDDEN);
+        printk("Charging status: Punjenje\n");
+    }
+    else {
+        lv_obj_add_flag(charging_img1, LV_OBJ_FLAG_HIDDEN);
+    }
+    
+    if (percentage >= 85) {
         lv_obj_clear_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label1, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label3, LV_OBJ_FLAG_HIDDEN);
-    } else if (percentage >= 59) {
+        lv_obj_add_flag(battery_label_empty, LV_OBJ_FLAG_HIDDEN);
+    } else if (percentage >= 55) {
         lv_obj_clear_flag(battery_label1, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label3, LV_OBJ_FLAG_HIDDEN);
-    } else if (percentage >= 25) {
+        lv_obj_add_flag(battery_label_empty, LV_OBJ_FLAG_HIDDEN);
+    } else if (percentage >= 30) {
         lv_obj_clear_flag(battery_label2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label1, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label3, LV_OBJ_FLAG_HIDDEN);
-    } else if (percentage >= 0) {
+        lv_obj_add_flag(battery_label_empty, LV_OBJ_FLAG_HIDDEN);
+    } else if (percentage >= 10) {
         lv_obj_clear_flag(battery_label3, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label1, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(battery_label2, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(battery_label_empty, LV_OBJ_FLAG_HIDDEN);
+    } else if (percentage >= 0) {
+        lv_obj_clear_flag(battery_label_empty, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(battery_label1, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(battery_label2, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(battery_label3, LV_OBJ_FLAG_HIDDEN);
     }
 }
 
@@ -209,7 +246,8 @@ void watchface1(void)
     lv_obj_align(battery_label1, LV_ALIGN_CENTER, 80, -90);
     lv_obj_align(battery_label2, LV_ALIGN_CENTER, 80, -90);
     lv_obj_align(battery_label3, LV_ALIGN_CENTER, 80, -90);
-    lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -59, 0);
+    lv_obj_align(battery_label_empty, LV_ALIGN_CENTER, 80, -90);
+    lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -50, 0);
 
 
 }

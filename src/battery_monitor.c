@@ -129,7 +129,7 @@ void battery_monitor_process(void)
     last_percentage = current_percentage;
     percentage = current_percentage;
     lv_label_set_text_fmt(battery_percent_label, "%d%%", percentage);
-    show_battery_status(percentage);
+    show_battery_status(percentage,is_charging);
     printk("=== Measurement #%u ===\n", count++);
     printk("Battery voltage (avg raw): %" PRId32 " mV\n", battery_mv);
     printk("Avg raw ADC value: %" PRId32 "\n", battery_raw);

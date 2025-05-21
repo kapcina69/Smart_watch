@@ -35,3 +35,8 @@ target_sources(app PRIVATE
 target_sources(app PRIVATE
     src/watchdog.c
 )
+target_sources(app PRIVATE
+    src/fonts/font1.c
+    src/fonts/font2.c
+)
+

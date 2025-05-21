@@ -19,7 +19,6 @@ extern lv_obj_t *steps_img;
 extern lv_obj_t *heart_img;
 
 
-
 /** @brief Initializes the UI components.
  *
  * This function creates and configures the UI components for the display.
@@ -90,7 +89,10 @@ void watchfacesteps(void);
  * 
  * This function updates the battery status on the display based on the percentage.
  * It shows or hides the battery label images according to the battery level.
+ * 
+ * @param percentage The current battery percentage (0-100).
+ * @param is_charging Indicates if the device is charging (true/false).
  */
-void show_battery_status(int percentage);
+void show_battery_status(int percentage,bool is_charging);
 
 #endif // UI_H

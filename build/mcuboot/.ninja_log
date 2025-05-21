@@ -733,3 +733,7 @@
 605	2434	1747749296635361860	/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/zephyr.bin	9e5eb56b84c0e142
 605	2434	1747749296635361860	/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/zephyr.meta	9e5eb56b84c0e142
 605	2434	1747749296635361860	/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/zephyr.stat	9e5eb56b84c0e142
+12	25	1747821283690812632	zephyr/include/generated/ncs_commit.h	5cb22c2be1e665ce
+12	25	1747821283690812632	/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/include/generated/ncs_commit.h	5cb22c2be1e665ce
+12	25	1747821284318198502	zephyr/include/generated/zephyr_commit.h	777a737ab95aed4
+12	25	1747821284318198502	/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/include/generated/zephyr_commit.h	777a737ab95aed4
