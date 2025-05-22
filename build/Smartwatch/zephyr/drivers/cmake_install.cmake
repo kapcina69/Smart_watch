@@ -109,6 +109,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/drivers/flash/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/drivers/gpio/cmake_install.cmake")
 endif()
 

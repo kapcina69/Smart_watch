@@ -1,0 +1,13 @@
+# Target labels
+ mcuboot
+# Source files and their labels
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot-complete.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-build.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-configure.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-download.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-install.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-mkdir.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-patch.rule
+/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-update.rule

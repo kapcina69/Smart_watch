@@ -37,6 +37,7 @@
 		watchdog0 = &wdt0;
 		max30101 = &max30101;
 		bmi160 = &bmi160;
+		my-pin = &my_pin;
 	};
 	soc {
 		#address-cells = < 0x1 >;
@@ -845,6 +846,11 @@
 	};
 	zephyr,user {
 		io-channels = < &adc 0x0 >, < &adc 0x1 >;
+	};
+	my_pin: my_pin {
+		compatible = "gpio-led";
+		gpios = < &gpio0 0x14 0x0 >;
+		label = "MY_PIN";
 	};
 	mipi_dbi {
 		compatible = "zephyr,mipi-dbi-spi";

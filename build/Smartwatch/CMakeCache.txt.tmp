@@ -44,6 +44,12 @@ BYPRODUCT_KERNEL_ELF_NAME:FILEPATH=/home/luka/ncs/v2.9.1/zephyr/samples/modules/
 //Kernel hex file
 BYPRODUCT_KERNEL_HEX_NAME:FILEPATH=/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/zephyr.hex
 
+//Signed kernel bin file
+BYPRODUCT_KERNEL_SIGNED_BIN_NAME:FILEPATH=/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/zephyr.signed.bin
+
+//Signed kernel hex file
+BYPRODUCT_KERNEL_SIGNED_HEX_NAME:FILEPATH=/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/Smartwatch/zephyr/zephyr.signed.hex
+
 //Selected board
 CACHED_BOARD:STRING=nrf52840dk/nrf52840
 
@@ -443,6 +449,9 @@ accelerometer_chart_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 accelerometer_chart_SOURCE_DIR:STATIC=/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch
 
+//imgtool sign sysbuild replacement
+imgtool_sign_sysbuild:STRING=--slot-size;0x7a000;--pad-header;--header-size;0x200
+
 
 ########################
 # INTERNAL cache entries
@@ -559,7 +568,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=225
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=235
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

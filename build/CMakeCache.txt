@@ -164,6 +164,8 @@ HWM:INTERNAL=v2
 HWMv2:INTERNAL=True
 //nRF Connect SDK partition managere controlled hex file
 Smartwatch_NCS_RUNNER_HEX:INTERNAL=/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/merged.hex
+//MCUboot signing script
+Smartwatch_SIGNING_SCRIPT:INTERNAL=/home/luka/ncs/v2.9.1/nrf/cmake/sysbuild/image_signing.cmake
 //West
 WEST:INTERNAL=/home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/python3.12;-m;west
 _Python3_EXECUTABLE:INTERNAL=/home/luka/ncs/toolchains/b77d8c1312/usr/local/bin/python3.12

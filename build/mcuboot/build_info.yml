@@ -1,0 +1,53 @@
+cmake:
+  application:
+    configuration-dir: /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr
+    source-dir: /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr
+  board:
+    name: nrf52840dk
+    qualifiers: nrf52840
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/luka/ncs/v2.9.1/nrf/dts/bindings
+     - /home/luka/ncs/v2.9.1/zephyr/dts/bindings
+    files:
+     - /home/luka/ncs/v2.9.1/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/app.overlay
+    include-dirs:
+     - /home/luka/ncs/v2.9.1/nrf/include
+     - /home/luka/ncs/v2.9.1/nrf/dts
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/include
+     - /home/luka/ncs/v2.9.1/zephyr/include
+     - /home/luka/ncs/v2.9.1/zephyr/include/zephyr
+     - /home/luka/ncs/v2.9.1/zephyr/dts/common
+     - /home/luka/ncs/v2.9.1/zephyr/dts/x86
+     - /home/luka/ncs/v2.9.1/zephyr/dts/xtensa
+     - /home/luka/ncs/v2.9.1/zephyr/dts/sparc
+     - /home/luka/ncs/v2.9.1/zephyr/dts/riscv
+     - /home/luka/ncs/v2.9.1/zephyr/dts/posix
+     - /home/luka/ncs/v2.9.1/zephyr/dts/nios2
+     - /home/luka/ncs/v2.9.1/zephyr/dts/arm64
+     - /home/luka/ncs/v2.9.1/zephyr/dts/arm
+     - /home/luka/ncs/v2.9.1/zephyr/dts/arc
+     - /home/luka/ncs/v2.9.1/zephyr/dts
+    user-files:
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/app.overlay
+  kconfig:
+    files:
+     - /home/luka/ncs/v2.9.1/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840_defconfig
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/prj.conf
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/boards/nrf52840dk_nrf52840.conf
+     - /home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/build/mcuboot/zephyr/.config.sysbuild
+    user-files:
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/prj.conf
+     - /home/luka/ncs/v2.9.1/bootloader/mcuboot/boot/zephyr/boards/nrf52840dk_nrf52840.conf
+  toolchain:
+    name: zephyr
+    path: /home/luka/ncs/toolchains/b77d8c1312/opt/zephyr-sdk
+  vendor-specific:
+    nordic:
+      svdfile: /home/luka/ncs/v2.9.1/modules/hal/nordic/nrfx/mdk/nrf52840.svd
+  zephyr:
+    version: 3.7.99
+    zephyr-base: /home/luka/ncs/v2.9.1/zephyr
+version: 0.1.0
