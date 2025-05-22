@@ -17,6 +17,7 @@
 #include "cardiogram.h"
 #include "bluetooth1.h"
 #include "font2.h"
+#include "bmi160.h"
 
 // Definicije LVGL objekata
 lv_obj_t *battery_label;
@@ -261,6 +262,8 @@ void watchface1(void)
     lv_obj_align(battery_label_empty, LV_ALIGN_CENTER, 77, -90);
     lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -61, 0);
 
+    display_state = 0; // Set display state to 0 for watchface1
+
 
 
 }
@@ -278,6 +281,8 @@ void watchfacesteps(void)
     lv_obj_clear_flag(shoesw1_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(shoesw1_img, LV_ALIGN_CENTER, 0, -15);
     lv_obj_set_style_text_font(steps_label, &ui_font_aliean_25, LV_PART_MAIN);
+
+    display_state = 2; // Set display state to 2 for steps display
 
 }
 
@@ -297,6 +302,9 @@ void watchfacehr(void)
     lv_obj_clear_flag(cardiogram_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(cardiogram_img, LV_ALIGN_CENTER, 0, -15);
     lv_obj_set_style_text_font(heart_label, &ui_font_aliean_25, LV_PART_MAIN);
+
+    display_state = 1; // Set display state to 1 for heart rate display
+
 
 }
 

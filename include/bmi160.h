@@ -15,6 +15,7 @@
 
 extern bool change_display_by_accel;
 extern bool enable_change_display_by_accel;
+extern uint16_t display_state;
 
 
 /**

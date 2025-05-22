@@ -13,7 +13,7 @@
 #define BMI160_CMD_FIFO_FLUSH     0xB0
 
 bool change_display_by_accel = false;
-bool enable_change_display_by_accel = false; // Flag to enable/disable display change by accelerometer
+bool enable_change_display_by_accel = true; // Flag to enable/disable display change by accelerometer
 uint16_t display_state = 0; // Default watchface state
 
 
