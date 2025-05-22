@@ -189,7 +189,12 @@ void main(void)
                     watchfacesteps();
                 } else if(strcmp(received_data_from_bluetooth, "w1hr") == 0) {
                     watchfacehr();
-                } else {
+                } else if(strcmp(received_data_from_bluetooth, "enablecd") == 0) {
+                    enable_change_display_by_accel = true;
+                } else if(strcmp(received_data_from_bluetooth, "disablecd") == 0) {
+                    enable_change_display_by_accel = false;
+                
+                }else {
                     rtc_set_initial_time(received_data_from_bluetooth); // Parse date/time
                 }
                 received_data_from_bluetooth = NULL; // Clear command
@@ -343,12 +348,16 @@ void bmi160_thread(void *arg1, void *arg2, void *arg3)
         printk("Failed to enable step counter\n");
         return;
     }
-
+    int16_t ax, ay, az;
+    
+    
     while (1) {
         uint16_t steps = 0;
         struct sensor_value accel[3];
         struct step_data step_data;
-
+        if (bmi160_read_accel(&ax, &ay, &az) == 0) {
+            printk("Accel X: %d, Y: %d, Z: %d\n", ax, ay, az);
+        }
         if (sensor_sample_fetch(sensor) == 0) {
             if (sensor_channel_get(sensor, SENSOR_CHAN_ACCEL_XYZ, accel) == 0) {
                 if (bmi160_read_step_count(&steps) == 0) {
@@ -358,7 +367,7 @@ void bmi160_thread(void *arg1, void *arg2, void *arg3)
                 }
             }
         }
-        k_sleep(K_MSEC(1000));
+        k_sleep(K_MSEC(100));
     }
 }
 
