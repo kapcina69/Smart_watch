@@ -43,6 +43,7 @@ lv_obj_t *cardiogram_img = NULL;
 lv_obj_t *charging_img;
 lv_obj_t *charging_img1;
 
+
 void initialize_ui(void)
 {
     image = lv_img_create(lv_scr_act());
@@ -231,9 +232,9 @@ void hide_all_views(void)
 
 void watchface1(void)
 {
-    k_msleep(100);
+    k_msleep(10);
     hide_all_views();
-    k_msleep(100);
+    k_msleep(10);
 
     lv_obj_clear_flag(image1, LV_OBJ_FLAG_HIDDEN);
 
@@ -261,13 +262,14 @@ void watchface1(void)
     lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -61, 0);
 
 
+
 }
 
 void watchfacesteps(void)
 {
-    k_msleep(100);
+    k_msleep(10);
     hide_all_views();
-    k_msleep(100);
+    k_msleep(10);
 
     lv_obj_clear_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(wachface1bg_img, LV_OBJ_FLAG_HIDDEN);
@@ -282,9 +284,9 @@ void watchfacesteps(void)
 
 void watchfacehr(void)
 {
-    k_msleep(100);
+    k_msleep(10);
     hide_all_views();
-    k_msleep(100);
+    k_msleep(10);
 
 
 

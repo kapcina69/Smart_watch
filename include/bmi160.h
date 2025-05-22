@@ -6,6 +6,16 @@
 #include <zephyr/drivers/i2c.h>
 
 #define BMI160_I2C_ADDR 0x69
+#define BMI160_REG_ACC_X_LSB 0x12
+#define BMI160_REG_ACC_X_MSB 0x13
+#define BMI160_REG_ACC_Y_LSB 0x14
+#define BMI160_REG_ACC_Y_MSB 0x15
+#define BMI160_REG_ACC_Z_LSB 0x16
+#define BMI160_REG_ACC_Z_MSB 0x17
+
+extern bool change_display_by_accel;
+extern bool enable_change_display_by_accel;
+
 
 /**
  * @brief Enable the step counter.
@@ -36,5 +46,6 @@ int bmi160_read_step_count(uint16_t *steps);
  * @return int 
  */
 int bmi160_reset_step_counter(void);
+int bmi160_read_accel(int16_t *x, int16_t *y, int16_t *z);
 
 #endif // BMI160_H_

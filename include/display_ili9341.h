@@ -44,7 +44,7 @@ void hide_all_views(void);
  * This function sets up the main watch face with the background image,
  * heart rate label, steps label, and other UI elements.
  */
-void watchface1(void);
+extern void watchface1(void);
 
 
 /**
@@ -74,7 +74,7 @@ void update_lcd_display(uint32_t heart_rate, uint32_t steps);
  * This function sets up the watch face with heart rate and cardiogram images.
  * It is used for a specific watch face view.
  */
-void watchfacehr(void); 
+extern void watchfacehr(void); 
 
 
 /**
@@ -83,7 +83,7 @@ void watchfacehr(void);
  * This function sets up the watch face with steps and shoes images.
  * It is used for a specific watch face view.
  */
-void watchfacesteps(void); 
+extern void watchfacesteps(void); 
 
 /**
  * @brief Set battery status
