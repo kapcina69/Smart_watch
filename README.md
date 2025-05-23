@@ -18,8 +18,14 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 
 - **📶 Wireless Connectivity**
   - BLE data sync via **Nordic UART Service (NUS)**
-  - Time synchronization from mobile app to MCU
+  - Time and date synchronization from mobile app to MCU
   - BLE commands to control UI and features remotely
+
+- **🔔 Haptic Feedback**
+  - Vibration motor feedback when:
+    - Charging is connected
+    - Bluetooth is enabled
+    - Screen is changed
 
 - **⚙️ System Reliability**
   - Watchdog timer for crash recovery
@@ -30,11 +36,12 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 ## 🛠 Hardware Setup
 
 | Component         | Protocol/Interface  | Details                      |
-|-------------------|---------------------|------------------------------|
+|------------------|---------------------|------------------------------|
 | **MCU**           | nRF52840 DK         | ARM Cortex-M4F, BLE 5.0      |
 | **Display**       | I²C (GC9A01)        | TFT LCD Round RGB 240×240    |
 | **Motion Sensor** | I²C (BMI160/LSM6DSO)| 6-axis accelerometer + gyro  |
 | **Pulse Sensor**  | I²C (MAX30102)      | Heart rate + SpO² (future)   |
+| **Vibration Motor**| GPIO               | Haptic feedback events       |
 | **Power**         | USB / Battery       | 3.7V **LiPo 402025** via DK headers |
 
 ---
@@ -55,16 +62,18 @@ A real-time fitness tracker application for the **nRF52840 DK**, leveraging **Ze
 ### 📱 Mobile App Integration
 - **Data Stream**: Heart rate and steps sent periodically via NUS.
 - **Time Sync**: Mobile app sends `TIME:HH:MM:SS` to update MCU clock.
+- **Date-Time Sync**: New command `DATETIME:DD-MM-YYYY HH:MM:SS` sets both date and time.
 
 ### 🧭 BLE Commands
 
-| Command       | Description                                       |
-|---------------|---------------------------------------------------|
-| `watchface1`  | Switch to default watchface                      |
-| `w1hr`        | Watchface 1 with heart rate monitor              |
-| `w1steps`     | Watchface 1 with steps monitor                   |
-| `enablecd`    | Enable **wrist flick gesture** to change screen  |
-| `disablecd`   | Disable wrist-based display switching            |
+| Command               | Description                                       |
+|------------------------|---------------------------------------------------|
+| `watchface1`          | Switch to default watchface                      |
+| `w1hr`                | Watchface 1 with heart rate monitor              |
+| `w1steps`             | Watchface 1 with steps monitor                   |
+| `enablecd`            | Enable **wrist flick gesture** to change screen  |
+| `disablecd`           | Disable wrist-based display switching            |
+| `DD-MM-YYYY HH:MM:SS` | Set date and time on device             |
 
 ### Compatibility:
 1. **nRF Toolbox** (UART mode)
