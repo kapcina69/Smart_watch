@@ -97,6 +97,20 @@ void vibration_50(void){
     gpio_pin_set(gpio_dev_vibration, VIBRATION, 0);
 }
 
+void vibration_150(void){
+    const struct device *gpio_dev_vibration = DEVICE_DT_GET(DT_NODELABEL(gpio1));  // GPIO kontroler
+    if (!device_is_ready(gpio_dev_vibration)) {
+        printk("GPIO uređaj nije spreman!\n");
+        return;
+    }else{
+        printk("GPIO uređaj spreman!\n");
+    }
+    gpio_pin_configure(gpio_dev_vibration, VIBRATION, GPIO_OUTPUT);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 1); 
+    k_msleep(150);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 0);
+}
+    
 
 
 void initialize_ui(void)
@@ -330,6 +344,8 @@ void watchface1(void)
 
     display_state = 0; // Set display state to 0 for watchface1
 
+    vibration_50();
+
 
 
 }
@@ -348,6 +364,8 @@ void watchfacesteps(void)
     lv_obj_set_style_text_font(steps_label, &ui_font_aliean_25, LV_PART_MAIN);
 
     display_state = 2; // Set display state to 2 for steps display
+
+    vibration_50();
 
 }
 
@@ -369,6 +387,8 @@ void watchfacehr(void)
     lv_obj_set_style_text_font(heart_label, &ui_font_aliean_25, LV_PART_MAIN);
 
     display_state = 1; // Set display state to 1 for heart rate display
+
+    vibration_50();
 
 
 }

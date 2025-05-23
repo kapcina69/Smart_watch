@@ -863,5 +863,14 @@
 			rotation = < 0xb4 >;
 			pixel-format = < 0x1 >;
 		};
+		gc9a01: gc9a01@0 {
+			status = "okay";
+			compatible = "galaxycore,gc9x01x";
+			reg = < 0x0 >;
+			mipi-max-frequency = < 0x5f5e100 >;
+			width = < 0xf0 >;
+			height = < 0xf0 >;
+			pixel-format = < 0x1 >;
+		};
 	};
 };

@@ -99,4 +99,10 @@ extern void watchfacesteps(void);
  */
 void show_battery_status(int percentage,bool is_charging);
 
+
+extern void vibration_50(void);
+extern void vibration_300(void);
+extern void vibration_150(void);
+
+
 #endif // UI_H
