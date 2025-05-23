@@ -10,19 +10,15 @@
     aliases {
         max30101 = &max30101;
         bmi160 = &bmi160;
-        my-pin = &my_pin;
     };
 
     zephyr,user {
         io-channels = <&adc 0>, <&adc 1>;
     };
 
-    /* Custom pin definition */
-    my_pin: my_pin {
-    compatible = "gpio-led";
-    gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
-    label = "MY_PIN";
-    };
+
+
+
 
 };
 

@@ -1254,7 +1254,6 @@ zephyr_udc0: &usbd {
     aliases {
         max30101 = &max30101;
         bmi160 = &bmi160;
-        my-pin = &my_pin;
     };
 
     zephyr,user {
@@ -1262,11 +1261,8 @@ zephyr_udc0: &usbd {
     };
 
 
-    my_pin: my_pin {
-    compatible = "gpio-led";
-    gpios = <&gpio0 20 (0 << 0)>;
-    label = "MY_PIN";
-    };
+
+
 
 };
 

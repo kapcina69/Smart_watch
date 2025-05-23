@@ -1,6 +1,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/display.h>
+#include <zephyr/drivers/gpio.h>
 #include <lvgl.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/sys/timeutil.h>
@@ -45,8 +46,63 @@ lv_obj_t *charging_img;
 lv_obj_t *charging_img1;
 
 
+
+
+
+
+#define VIBRATION 10
+bool vibration_flag = true;
+
+void initialize_vibration(void)
+{
+    const struct device *gpio_dev_vibration = DEVICE_DT_GET(DT_NODELABEL(gpio1));  // GPIO kontroler
+    if (!device_is_ready(gpio_dev_vibration)) {
+        printk("GPIO uređaj nije spreman!\n");
+        return;
+    }else{
+        printk("GPIO uređaj spreman!\n");
+    }
+    gpio_pin_configure(gpio_dev_vibration, VIBRATION, GPIO_OUTPUT);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 1); 
+    k_msleep(300);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 0);
+
+}
+
+void vibration_300(){
+    const struct device *gpio_dev_vibration = DEVICE_DT_GET(DT_NODELABEL(gpio1));  // GPIO kontroler
+    if (!device_is_ready(gpio_dev_vibration)) {
+        printk("GPIO uređaj nije spreman!\n");
+        return;
+    }else{
+        printk("GPIO uređaj spreman!\n");
+    }
+    gpio_pin_configure(gpio_dev_vibration, VIBRATION, GPIO_OUTPUT);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 1); 
+    k_msleep(300);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 0);
+}
+
+void vibration_50(void){
+    const struct device *gpio_dev_vibration = DEVICE_DT_GET(DT_NODELABEL(gpio1));  // GPIO kontroler
+    if (!device_is_ready(gpio_dev_vibration)) {
+        printk("GPIO uređaj nije spreman!\n");
+        return;
+    }else{
+        printk("GPIO uređaj spreman!\n");
+    }
+    gpio_pin_configure(gpio_dev_vibration, VIBRATION, GPIO_OUTPUT);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 1); 
+    k_msleep(50);
+    gpio_pin_set(gpio_dev_vibration, VIBRATION, 0);
+}
+
+
+
 void initialize_ui(void)
 {
+
+    // initialize_vibration();
     image = lv_img_create(lv_scr_act());
     lv_img_set_src(image, &background1);
     lv_obj_align(image, LV_ALIGN_CENTER, 0, 0);
@@ -170,12 +226,22 @@ void initialize_ui(void)
 void show_battery_status(int percentage, bool is_charging)
 
 {
+    // initialize_vibration();
     if (is_charging) {
+
         lv_obj_clear_flag(charging_img1, LV_OBJ_FLAG_HIDDEN);
+
+        if(vibration_flag){
+
+            vibration_300();
+            vibration_flag = false;
+        
+        }
         printk("Charging status: Punjenje\n");
     }
     else {
         lv_obj_add_flag(charging_img1, LV_OBJ_FLAG_HIDDEN);
+        vibration_flag = true;
     }
     
     if (percentage >= 85) {
@@ -273,7 +339,6 @@ void watchfacesteps(void)
     k_msleep(10);
     hide_all_views();
     k_msleep(10);
-
     lv_obj_clear_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(wachface1bg_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
@@ -316,7 +381,7 @@ void watchface2(void)
     k_msleep(100);
     hide_all_views();
     k_msleep(100);
-
+    vibration_300();
     lv_obj_clear_flag(image, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(bluetooth_img, LV_OBJ_FLAG_HIDDEN);
 

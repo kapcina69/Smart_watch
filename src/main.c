@@ -121,6 +121,7 @@ void main(void)
         printk("Sensor init failed!\n");
         return;
     }
+    
 
     // Set RTC to a default time
     rtc_set_initial_time("2023-10-01 12:00:00");

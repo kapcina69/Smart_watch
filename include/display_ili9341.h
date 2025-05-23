@@ -2,6 +2,8 @@
 #define DISPLAY_ILI9341_H
 
 #include <lvgl.h>
+#include <zephyr/kernel.h>
+#include <zephyr/drivers/gpio.h>
 
 // Extern LVGL objekti
 extern lv_obj_t *battery_label;
@@ -18,6 +20,7 @@ extern lv_obj_t *bt_label;
 extern lv_obj_t *steps_img;
 extern lv_obj_t *heart_img;
 extern lv_obj_t *short_time_label;
+
 
 
 /** @brief Initializes the UI components.
