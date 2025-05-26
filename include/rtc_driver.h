@@ -6,6 +6,9 @@
 #include <zephyr/drivers/counter.h>
 #include <lvgl.h>
 
+extern int inthr;
+extern char time_labels[3][6];
+
 /**
  * @brief Initializes the RTC (Real-Time Clock) module.
  * 
@@ -33,5 +36,7 @@ void rtc_set_initial_time(const char *data);
  * @param short_time_label
  */
 void rtc_update_time_label(lv_obj_t *time_label, lv_obj_t *date_label, lv_obj_t *short_time_label);
+
+extern void update_minute_labels_and_signal(void);
 
 #endif /* RTC_DRIVER_H */

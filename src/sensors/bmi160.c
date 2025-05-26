@@ -131,9 +131,9 @@ int bmi160_read_accel(int16_t *x, int16_t *y, int16_t *z)
             
         } else {
             change_display_by_accel = false;
-            printk("Don't change display by accel\n");
+            // printk("Don't change display by accel\n");
         }
-        printk("Accel X: %d, Y: %d, Z: %d, Total: %d\n", *x, *y, *z, total);
+        // printk("Accel X: %d, Y: %d, Z: %d, Total: %d\n", *x, *y, *z, total);
         if(display_state==0 && change_display_by_accel){
             display_state = 1;
             change_display_by_accel = false;

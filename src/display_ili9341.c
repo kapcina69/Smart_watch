@@ -45,6 +45,8 @@ lv_obj_t *cardiogram_img = NULL;
 lv_obj_t *charging_img;
 lv_obj_t *charging_img1;
 
+lv_obj_t *object;
+
 
 
 
@@ -116,21 +118,27 @@ void vibration_150(void){
 void initialize_ui(void)
 {
 
+
+
+    
     // initialize_vibration();
     image = lv_img_create(lv_scr_act());
     lv_img_set_src(image, &background1);
     lv_obj_align(image, LV_ALIGN_CENTER, 0, 0);
     lv_obj_add_flag(image, LV_OBJ_FLAG_HIDDEN);
 
+
     image1 = lv_img_create(lv_scr_act());
     lv_img_set_src(image1, &background1);
     lv_obj_align(image1, LV_ALIGN_CENTER, 0, 0);
     lv_obj_add_flag(image1, LV_OBJ_FLAG_HIDDEN);
 
+
     wachface1bg_img = lv_img_create(lv_scr_act());
     lv_img_set_src(wachface1bg_img, &watchface1bg);
     lv_obj_align(wachface1bg_img, LV_ALIGN_CENTER, 0, 0);
     lv_obj_add_flag(wachface1bg_img, LV_OBJ_FLAG_HIDDEN);
+
 
 
     bluetooth_img = lv_img_create(lv_scr_act());
@@ -140,7 +148,7 @@ void initialize_ui(void)
 
     bluetooth_img1 = lv_img_create(lv_scr_act());
     lv_img_set_src(bluetooth_img1, &bluetooth1);
-    lv_obj_align(bluetooth_img1, LV_ALIGN_CENTER, 10, -90);
+    lv_obj_align(bluetooth_img1, LV_ALIGN_CENTER, -20, -90);
     lv_obj_add_flag(bluetooth_img1, LV_OBJ_FLAG_HIDDEN);
     lv_obj_set_style_img_recolor(bluetooth_img1, lv_color_white(), LV_PART_MAIN);
     
@@ -149,7 +157,7 @@ void initialize_ui(void)
     lv_obj_set_style_text_color(bt_label, lv_color_white(), LV_PART_MAIN);
     lv_obj_set_style_text_font(bt_label, &lv_font_montserrat_20, LV_PART_MAIN);
     lv_obj_add_flag(bt_label, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_align(bt_label, LV_ALIGN_CENTER, 10, -90);
+    lv_obj_align(bt_label, LV_ALIGN_CENTER, 20, -90);
 
     battery_label = lv_label_create(lv_scr_act());
     lv_label_set_text(battery_label, LV_SYMBOL_BATTERY_FULL);
@@ -180,6 +188,7 @@ void initialize_ui(void)
     lv_obj_set_style_text_color(battery_percent_label, lv_color_white(), LV_PART_MAIN);
     lv_obj_set_style_text_font(battery_percent_label, &lv_font_montserrat_16, LV_PART_MAIN);
     lv_label_set_text(battery_percent_label, "30%");
+    lv_obj_add_flag(battery_percent_label, LV_OBJ_FLAG_HIDDEN);
 
     my_time_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(my_time_label, lv_color_hex(0xF4F0EC), LV_PART_MAIN);
@@ -188,7 +197,7 @@ void initialize_ui(void)
     short_time_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(short_time_label, lv_color_white(), LV_PART_MAIN);
     lv_obj_set_style_text_font(short_time_label, &lv_font_montserrat_16, LV_PART_MAIN);
-    lv_obj_align(short_time_label, LV_ALIGN_CENTER, -70,-90);
+    lv_obj_align(short_time_label, LV_ALIGN_CENTER, 0,-90);
 
     my_date_label = lv_label_create(lv_scr_act());
     lv_obj_set_style_text_color(my_date_label, lv_color_white(), LV_PART_MAIN);
@@ -308,6 +317,7 @@ void hide_all_views(void)
     lv_obj_add_flag(shoesw1_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(cardiogram_img, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(short_time_label, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(battery_percent_label, LV_OBJ_FLAG_HIDDEN);
 
 }
 
@@ -318,15 +328,16 @@ void watchface1(void)
     k_msleep(10);
 
     lv_obj_clear_flag(image1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(battery_percent_label, LV_OBJ_FLAG_HIDDEN);
 
     lv_obj_clear_flag(steps_label, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_align(steps_label, LV_ALIGN_CENTER, -45, 80);
+    lv_obj_align(steps_label, LV_ALIGN_CENTER, -45, 81);
     lv_obj_set_style_text_font(steps_label, &lv_font_montserrat_16, LV_PART_MAIN);
     lv_obj_set_style_text_font(heart_label, &lv_font_montserrat_16, LV_PART_MAIN);
 
 
     lv_obj_clear_flag(heart_label, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_align(heart_label, LV_ALIGN_CENTER, 42, 80);
+    lv_obj_align(heart_label, LV_ALIGN_CENTER, 45, 81);
 
     lv_obj_clear_flag(my_time_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(my_time_label, LV_ALIGN_CENTER, 0, -40);
@@ -335,12 +346,15 @@ void watchface1(void)
     lv_obj_clear_flag(my_date_label, LV_OBJ_FLAG_HIDDEN);
     lv_obj_align(my_date_label, LV_ALIGN_CENTER, 0, -20);
 
-    lv_obj_align(battery_label, LV_ALIGN_CENTER, 77, -90);
-    lv_obj_align(battery_label1, LV_ALIGN_CENTER,77, -90);
-    lv_obj_align(battery_label2, LV_ALIGN_CENTER, 77, -90);
-    lv_obj_align(battery_label3, LV_ALIGN_CENTER, 77, -90);
-    lv_obj_align(battery_label_empty, LV_ALIGN_CENTER, 77, -90);
+    lv_obj_align(battery_label, LV_ALIGN_CENTER, 40, -90);
+    lv_obj_align(battery_label1, LV_ALIGN_CENTER,40, -90);
+    lv_obj_align(battery_label2, LV_ALIGN_CENTER, 40, -90);
+    lv_obj_align(battery_label3, LV_ALIGN_CENTER, 40, -90);
+    lv_obj_align(battery_label_empty, LV_ALIGN_CENTER, 40, -90);
     lv_obj_align_to(battery_percent_label, battery_label, LV_ALIGN_OUT_RIGHT_MID, -61, 0);
+    lv_obj_align(bluetooth_img1, LV_ALIGN_CENTER, -35, -90);
+
+
 
     display_state = 0; // Set display state to 0 for watchface1
 

@@ -1242,12 +1242,16 @@ zephyr_udc0: &usbd {
 };
 # 0 "<command-line>" 2
 # 1 "/home/luka/ncs/v2.9.1/zephyr/samples/modules/lvgl/Smartwatch/nrf52840dk_nrf52840.overlay" 1
+
+
+
+
 / {
     compatible = "nordic,nrf52840-dk-nrf52840";
 
     chosen {
 
-        zephyr,display = &ili9341;
+        zephyr,display = &gc9a01;
         zephyr,rtc = &rtc0;
     };
 
@@ -1312,25 +1316,16 @@ zephyr_udc0: &usbd {
         #size-cells = <0>;
         spi-dev = <&spi1>;
 
-        ili9341: ili9341@0 {
-            compatible = "ilitek,ili9341";
-            reg = <0>;
-            mipi-max-frequency = <4000000>;
-            width = <240>;
-            height = <320>;
-            rotation = <180>;
-            pixel-format = <1>;
-        };
 
         gc9a01: gc9a01@0 {
-            status = "okay";
+            status="okay";
             compatible = "galaxycore,gc9x01x";
             reg = <0>;
             mipi-max-frequency = <100000000>;
             width = <240>;
             height = <240>;
-            pixel-format = <1>;
-
+   pixel-format = <1>;
+            display-inversion;
 
         };
     };

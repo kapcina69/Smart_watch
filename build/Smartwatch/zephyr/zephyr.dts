@@ -18,7 +18,7 @@
 		zephyr,bt-mon-uart = &uart0;
 		zephyr,bt-c2h-uart = &uart0;
 		zephyr,ieee802154 = &ieee802154;
-		zephyr,display = &ili9341;
+		zephyr,display = &gc9a01;
 		zephyr,rtc = &rtc0;
 	};
 	aliases {
@@ -854,15 +854,6 @@
 		#address-cells = < 0x1 >;
 		#size-cells = < 0x0 >;
 		spi-dev = < &spi1 >;
-		ili9341: ili9341@0 {
-			compatible = "ilitek,ili9341";
-			reg = < 0x0 >;
-			mipi-max-frequency = < 0x3d0900 >;
-			width = < 0xf0 >;
-			height = < 0x140 >;
-			rotation = < 0xb4 >;
-			pixel-format = < 0x1 >;
-		};
 		gc9a01: gc9a01@0 {
 			status = "okay";
 			compatible = "galaxycore,gc9x01x";
@@ -871,6 +862,7 @@
 			width = < 0xf0 >;
 			height = < 0xf0 >;
 			pixel-format = < 0x1 >;
+			display-inversion;
 		};
 	};
 };

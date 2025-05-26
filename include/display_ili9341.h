@@ -104,5 +104,7 @@ extern void vibration_50(void);
 extern void vibration_300(void);
 extern void vibration_150(void);
 
+extern void draw_heart_rate_chart_with_labels(const char time_labels[3][6], const int heart_rate[], int count);
+
 
 #endif // UI_H
