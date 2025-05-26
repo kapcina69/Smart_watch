@@ -1,9 +1,13 @@
+
+
+
+
 / {
     compatible = "nordic,nrf52840-dk-nrf52840";
 
     chosen {
         /* Only one display can be chosen at a time */
-        zephyr,display = &ili9341;    // SPI TFT
+        zephyr,display = &gc9a01;    // SPI TFT
         zephyr,rtc = &rtc0;
     };
 
@@ -68,25 +72,16 @@
         #size-cells = <0>;     // No size needed (common for simple SPI devices)
         spi-dev = <&spi1>;
 
-        ili9341: ili9341@0 {
-            compatible = "ilitek,ili9341";
-            reg = <0>;
-            mipi-max-frequency = <4000000>;
-            width = <240>;
-            height = <320>;
-            rotation = <180>;
-            pixel-format = <1>;
-        };
 
         gc9a01: gc9a01@0 {
-            status = "okay";
+            status="okay";
             compatible = "galaxycore,gc9x01x";
             reg = <0>;
             mipi-max-frequency = <100000000>;
             width = <240>;
             height = <240>;
-            pixel-format = <1>;
-
+			pixel-format = <1>;
+            display-inversion;
 
         };
     };
