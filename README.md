@@ -94,8 +94,8 @@ This feature allows changing the display screen by flicking your wrist, using th
 
 ## 🖼️ Screenshots
 
-(![Preview](./images/watchface1.png)
-)
+![Preview](./images/watchface1.png)
+
  *(Example: Live heart rate and step counter display)*
 
 ---
