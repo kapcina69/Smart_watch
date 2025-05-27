@@ -92,8 +92,6 @@ This feature allows changing the display screen by flicking your wrist, using th
 
 ---
 
-## 🖼️ Screenshots
-
 
 ## 📸 Media Gallery
 
