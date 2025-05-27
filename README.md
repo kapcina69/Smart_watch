@@ -1,6 +1,5 @@
 
 
-```markdown
 # 💪 Fitness Tracker with BLE & Real-Time LVGL GUI
 
 ![Project Banner](./images/watchface1.jpg)
